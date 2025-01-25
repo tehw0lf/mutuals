@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Mutual Followers</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        text-align: center;
+        background-color: #ffffff;
+        color: #000000;
+      }
+      input,
+      button {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+      button {
+        cursor: pointer;
+      }
+      .theme-toggle {
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+      }
+      .results {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        padding: 0;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 343px;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .card img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+      }
+      .card span {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+      }
+      .results a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .results a:hover {
+        text-decoration: none;
+      }
+      body.dark {
+        background-color: #121212;
+        color: #ddd;
+      }
+      body.dark input,
+      body.dark button {
+        background-color: #333333;
+        color: #ddd;
+        border: 1px solid #ddd;
+      }
+      body.dark .card {
+        background-color: #333;
+        border-color: #555;
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+      }
+      body.dark .card span {
+        color: #ddd;
+      }
+      .results-section {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GitHub Mutual Followers</h1>
+    <button id="themeToggle" class="theme-toggle">Toggle Dark Mode</button>
+    <input type="text" id="username" placeholder="Enter GitHub username(s)" />
+    <button id="fetchButton">Fetch Mutual Followers</button>
+    <div id="results"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
